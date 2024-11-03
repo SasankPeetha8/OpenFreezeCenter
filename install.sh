@@ -22,9 +22,8 @@ else
     cd ~/Desktop
     mkdir OFC
     echo "----------Installing python3-virtualenv AND python3-venv and other dependencies----------"
-    sudo apt update
-    sudo apt upgrade
-    sudo apt install python3-virtualenv python3-venv libgirepository1.0-dev libcairo2-dev
+    # sudo apt install python3-virtualenv python3-venv libgirepository1.0-dev libcairo2-dev
+    sudo pacman -S python-virtualenv libgirepository cairo expect
     echo "----------Creating Virtual Environment for Open Freeze Center----------"
     python3 -m venv ~/Desktop/OFC
     echo "----------Virtual Environment for Open Freeze Center created----------"
@@ -32,15 +31,15 @@ else
     ~/Desktop/OFC/bin/pip3 install PyGObject
     echo "----------Installing PyCairo----------"
     ~/Desktop/OFC/bin/pip3 install pycairo
-    echo "----------Installing Expert----------"
-    sudo apt-get install expect
+    # echo "----------Installing Expert----------"
+    # sudo apt-get install expect
     echo "----------Moving files to virtual environment----------"
-    cp -i ~/Downloads/OpenFreezeCenter-5/install.sh  ~/Desktop/OFC
-    cp -i ~/Downloads/OpenFreezeCenter-5/file_1.sh  ~/Desktop/OFC
-    cp -i ~/Downloads/OpenFreezeCenter-5/file_2.sh  ~/Desktop/OFC
-    cp -i ~/Downloads/OpenFreezeCenter-5/OFC.py  ~/Desktop/OFC
-    cp -i ~/Downloads/OpenFreezeCenter-5/README.md  ~/Desktop/OFC
-    cp -i ~/Downloads/OpenFreezeCenter-5/LICENSE  ~/Desktop/OFC
+    cp -i ./install.sh  ~/Desktop/OFC/install.sh
+    cp -i ./file_1.sh  ~/Desktop/OFC/file_1.sh
+    cp -i ./file_2.sh  ~/Desktop/OFC/file_2.sh
+    cp -i ./OFC.py  ~/Desktop/OFC/OFC.py
+    cp -i ./README.md  ~/Desktop/OFC/README.md
+    cp -i ./LICENSE  ~/Desktop/OFC/LICENSE
     FLAG_3=1
 fi
 
