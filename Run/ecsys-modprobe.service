@@ -1,0 +1,11 @@
+[Unit]
+Description=Unload and Reload ec_sys Kernel Module with Write Support
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash -c 'modprobe -r ec_sys && modprobe ec_sys write_support=1'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
